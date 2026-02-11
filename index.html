@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100vh; background: #000; overflow: hidden; }
+        .ejs-header { background: #111 !important; border-bottom: 2px solid #0055ff !important; display: flex !important; }
+        .ejs-menu-btn[data-t="Load Rom"]::after { content: " 📁DISC"; color: #fff; font-weight: bold; }
+        .ejs-menu-btn[data-t="Export Save"]::after { content: " 📤SAVE"; color: #10b981; }
+        .ejs-menu-btn[data-t="Import Save"]::after { content: " 📥LOAD"; color: #f59e0b; }
+    </style>
+</head>
+<body>
+    <div id="game" style="width:100%;height:100%;"></div>
+    <script>
+        EJS_player = '#game';
+        EJS_core = 'psx';
+        
+        /* THIS IS THE FIX: Pointing to your own local 'data' folder */
+        EJS_pathtodata = 'data/'; 
+        
+        EJS_startOnLoaded = false;
+        EJS_gameName = "FF7_MultiDisc";
+        EJS_multidisc = true; 
+
+        EJS_Buttons = {
+            loadState: true,
+            saveState: true,
+            exportSave: true, 
+            importSave: true, 
+            settings: true,
+            fullscreen: true
+        };
+    </script>
+    <script src="data/loader.js"></script>
+</body>
+</html>
